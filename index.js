@@ -5,3 +5,7 @@ const port = 1883;
 server.listen(port, function () {
   console.log("server started and listening on port ", port);
 });
+
+aedes.on('publish', function({topic, payload}) {
+  console.log("broker routing published message", topic, payload?.toString());
+});
